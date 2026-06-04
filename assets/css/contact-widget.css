@@ -1,0 +1,124 @@
+.linsy-contact-widget {
+	position: fixed;
+	z-index: 9999;
+	color: #fff;
+	font-family: inherit;
+}
+
+.linsy-contact-widget a,
+.linsy-contact-widget button {
+	-webkit-tap-highlight-color: transparent;
+}
+
+.linsy-contact-widget a:focus-visible,
+.linsy-contact-widget button:focus-visible {
+	outline: 2px solid rgba(255, 255, 255, 0.9);
+	outline-offset: 2px;
+}
+
+.linsy-contact-widget__icon {
+	display: inline-flex;
+	width: 24px;
+	height: 24px;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+}
+
+.linsy-contact-widget__icon svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.linsy-contact-widget__item,
+.linsy-contact-widget__toggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	border: 0;
+	padding: 0;
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.linsy-contact-widget__item--whatsapp {
+	background: #25d366;
+}
+
+.linsy-contact-widget__item--phone {
+	background: #1c8f8a;
+}
+
+.linsy-contact-widget__item--email {
+	background: #e53935;
+}
+
+.linsy-contact-widget__toggle {
+	background: #111;
+}
+
+.linsy-contact-widget__toggle .linsy-contact-widget__icon {
+	transition: transform 160ms ease;
+}
+
+.linsy-contact-widget__desktop {
+	right: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 18px;
+	overflow: hidden;
+	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.linsy-contact-widget__links {
+	display: flex;
+	flex-direction: column;
+}
+
+.linsy-contact-widget__desktop.is-collapsed .linsy-contact-widget__links {
+	display: none;
+}
+
+.linsy-contact-widget__desktop.is-collapsed .linsy-contact-widget__toggle .linsy-contact-widget__icon {
+	transform: rotate(180deg);
+}
+
+.linsy-contact-widget__mobile {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+
+.linsy-contact-widget__mobile-inner {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	box-shadow: 0 -10px 24px rgba(0, 0, 0, 0.18);
+	padding-bottom: env(safe-area-inset-bottom);
+}
+
+.linsy-contact-widget__mobile .linsy-contact-widget__item {
+	width: 100%;
+	height: 56px;
+}
+
+@media (max-width: 767px) {
+	.linsy-contact-widget__desktop {
+		display: none;
+	}
+
+	.linsy-contact-widget__mobile {
+		display: block;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.linsy-contact-widget__toggle .linsy-contact-widget__icon {
+		transition: none;
+	}
+}
+

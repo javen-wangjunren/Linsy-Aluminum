@@ -23,6 +23,10 @@ define( 'HELLO_THEME_STYLE_URL', HELLO_THEME_ASSETS_URL . 'css/' );
 define( 'HELLO_THEME_IMAGES_PATH', HELLO_THEME_ASSETS_PATH . 'images/' );
 define( 'HELLO_THEME_IMAGES_URL', HELLO_THEME_ASSETS_URL . 'images/' );
 
+define( 'LINSY_CONTACT_WHATSAPP_URL', 'https://api.whatsapp.com/send?phone=8618124703776' );
+define( 'LINSY_CONTACT_PHONE_TEL', '+8618124703776' );
+define( 'LINSY_CONTACT_EMAIL', 'david@linsyaluminum.com' );
+
 if ( ! isset( $content_width ) ) {
 	$content_width = 800; // Pixels.
 }
@@ -307,3 +311,136 @@ add_action('wp_head', function() {
         echo '<script>window.original_page_slug = "' . esc_js($full_original_path) . '";</script>';
     }
 });
+
+function linsy_contact_widget_enqueue_assets() {
+	if ( is_admin() ) {
+		return;
+	}
+
+	wp_enqueue_style(
+		'linsy-contact-widget',
+		HELLO_THEME_STYLE_URL . 'contact-widget.css',
+		[ 'hello-elementor-theme-style' ],
+		HELLO_ELEMENTOR_VERSION
+	);
+
+	wp_enqueue_script(
+		'linsy-contact-widget',
+		HELLO_THEME_SCRIPTS_URL . 'contact-widget.js',
+		[],
+		HELLO_ELEMENTOR_VERSION,
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'linsy_contact_widget_enqueue_assets', 20 );
+
+function linsy_contact_widget_inline_svg( string $name ): string {
+	$base_dir = trailingslashit( HELLO_THEME_IMAGES_PATH . 'contact-widget' );
+	$path = $base_dir . $name . '.svg';
+
+	$real_base = realpath( $base_dir );
+	$real_path = realpath( $path );
+
+	if ( ! $real_base || ! $real_path || 0 !== strpos( $real_path, $real_base ) ) {
+		return '';
+	}
+
+	$svg = file_get_contents( $real_path );
+	if ( false === $svg ) {
+		return '';
+	}
+
+	$allowed = [
+		'svg'      => [
+			'xmlns'             => true,
+			'viewbox'           => true,
+			'width'             => true,
+			'height'            => true,
+			'fill'              => true,
+			'stroke'            => true,
+			'stroke-width'      => true,
+			'role'              => true,
+			'aria-hidden'       => true,
+			'focusable'         => true,
+			'class'             => true,
+			'preserveaspectratio' => true,
+		],
+		'g'        => [
+			'fill'         => true,
+			'stroke'       => true,
+			'stroke-width' => true,
+			'transform'    => true,
+			'class'        => true,
+		],
+		'path'     => [
+			'd'               => true,
+			'fill'            => true,
+			'stroke'          => true,
+			'stroke-width'    => true,
+			'stroke-linecap'  => true,
+			'stroke-linejoin' => true,
+			'fill-rule'       => true,
+			'clip-rule'       => true,
+		],
+		'circle'   => [
+			'cx'           => true,
+			'cy'           => true,
+			'r'            => true,
+			'fill'         => true,
+			'stroke'       => true,
+			'stroke-width' => true,
+		],
+		'rect'     => [
+			'x'            => true,
+			'y'            => true,
+			'width'        => true,
+			'height'       => true,
+			'rx'           => true,
+			'ry'           => true,
+			'fill'         => true,
+			'stroke'       => true,
+			'stroke-width' => true,
+		],
+		'line'     => [
+			'x1'            => true,
+			'y1'            => true,
+			'x2'            => true,
+			'y2'            => true,
+			'stroke'        => true,
+			'stroke-width'  => true,
+			'stroke-linecap' => true,
+		],
+		'polyline' => [
+			'points'       => true,
+			'fill'         => true,
+			'stroke'       => true,
+			'stroke-width' => true,
+		],
+		'polygon'  => [
+			'points'       => true,
+			'fill'         => true,
+			'stroke'       => true,
+			'stroke-width' => true,
+		],
+		'title'    => [],
+		'desc'     => [],
+	];
+
+	return wp_kses( $svg, $allowed );
+}
+
+function linsy_render_contact_widget() {
+	if ( is_admin() ) {
+		return;
+	}
+
+	if ( did_action( 'elementor/loaded' ) && class_exists( '\Elementor\Plugin' ) ) {
+		$plugin = \Elementor\Plugin::instance();
+		if ( isset( $plugin->editor ) && method_exists( $plugin->editor, 'is_edit_mode' ) && $plugin->editor->is_edit_mode() ) {
+			return;
+		}
+	}
+
+	get_template_part( 'template-parts/contact-widget' );
+}
+add_action( 'wp_footer', 'linsy_render_contact_widget', 20 );

@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us Widget 设计稿</title>
+    <style>
+      :root {
+        --page-bg: #f6f7fb;
+        --ink: #0b1220;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+          Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        color: var(--ink);
+        background: var(--page-bg);
+      }
+
+      .page {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 28px 18px 110px;
+      }
+
+      .hero {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+        padding: 22px 18px;
+      }
+
+      .hero h1 {
+        margin: 0 0 10px;
+        font-size: 22px;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        margin: 0;
+        opacity: 0.8;
+        line-height: 1.6;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 14px;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+        padding: 16px 14px;
+        min-height: 110px;
+      }
+
+      .card .k {
+        font-weight: 650;
+        margin: 0 0 6px;
+      }
+
+      .card .v {
+        margin: 0;
+        opacity: 0.82;
+        line-height: 1.55;
+        word-break: break-word;
+      }
+
+      .tip {
+        margin-top: 12px;
+        font-size: 12px;
+        opacity: 0.75;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 860px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .linsy-contact-widget {
+        position: fixed;
+        z-index: 9999;
+        color: #fff;
+        font-family: inherit;
+      }
+
+      .linsy-contact-widget a,
+      .linsy-contact-widget button {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .linsy-contact-widget a:focus-visible,
+      .linsy-contact-widget button:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.9);
+        outline-offset: 2px;
+      }
+
+      .linsy-contact-widget__icon {
+        display: inline-flex;
+        width: 24px;
+        height: 24px;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+
+      .linsy-contact-widget__icon svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .linsy-contact-widget__item,
+      .linsy-contact-widget__toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        border: 0;
+        padding: 0;
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .linsy-contact-widget__item--whatsapp {
+        background: #25d366;
+      }
+
+      .linsy-contact-widget__item--phone {
+        background: #1c8f8a;
+      }
+
+      .linsy-contact-widget__item--email {
+        background: #e53935;
+      }
+
+      .linsy-contact-widget__toggle {
+        background: #111;
+      }
+
+      .linsy-contact-widget__toggle .linsy-contact-widget__icon {
+        transition: transform 160ms ease;
+      }
+
+      .linsy-contact-widget__desktop {
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+      }
+
+      .linsy-contact-widget__links {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .linsy-contact-widget__desktop.is-collapsed .linsy-contact-widget__links {
+        display: none;
+      }
+
+      .linsy-contact-widget__desktop.is-collapsed .linsy-contact-widget__toggle .linsy-contact-widget__icon {
+        transform: rotate(180deg);
+      }
+
+      .linsy-contact-widget__mobile {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+      }
+
+      .linsy-contact-widget__mobile-inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        box-shadow: 0 -10px 24px rgba(0, 0, 0, 0.18);
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+
+      .linsy-contact-widget__mobile .linsy-contact-widget__item {
+        width: 100%;
+        height: 56px;
+      }
+
+      @media (max-width: 767px) {
+        .linsy-contact-widget__desktop {
+          display: none;
+        }
+
+        .linsy-contact-widget__mobile {
+          display: block;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .linsy-contact-widget__toggle .linsy-contact-widget__icon {
+          transition: none;
+        }
+      }
+
+      .screen-reader-text {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <h1>Contact Us Widget 设计预览</h1>
+        <p>右侧竖排（桌面端）+ 底部横排（手机端）。请把浏览器窗口缩放到小于 768px 查看手机样式。</p>
+      </section>
+
+      <section class="cards">
+        <div class="card">
+          <p class="k">WhatsApp</p>
+          <p class="v">https://api.whatsapp.com/send?phone=8618124703776</p>
+        </div>
+        <div class="card">
+          <p class="k">Phone</p>
+          <p class="v">tel:+8618124703776</p>
+        </div>
+        <div class="card">
+          <p class="k">Email</p>
+          <p class="v">mailto:david@linsyaluminum.com</p>
+        </div>
+      </section>
+
+      <p class="tip">
+        提示：桌面端点击顶部箭头可收起/展开；此设计稿页面不做 localStorage 记忆（主题里有）。手机端为底部横排三按钮。
+      </p>
+    </main>
+
+    <div class="linsy-contact-widget linsy-contact-widget__desktop" data-linsy-contact-widget="desktop">
+      <button type="button" class="linsy-contact-widget__toggle" aria-expanded="true" aria-controls="linsy-contact-widget-links">
+        <span class="linsy-contact-widget__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path
+              fill="currentColor"
+              d="M12 6a1 1 0 0 1 1 1v7.59l2.3-2.3a1 1 0 1 1 1.4 1.42l-4.01 4a1 1 0 0 1-1.38 0l-4.01-4a1 1 0 1 1 1.4-1.42l2.3 2.3V7a1 1 0 0 1 1-1z"
+            />
+          </svg>
+        </span>
+        <span class="screen-reader-text">Toggle contact links</span>
+      </button>
+
+      <div id="linsy-contact-widget-links" class="linsy-contact-widget__links">
+        <a class="linsy-contact-widget__item linsy-contact-widget__item--whatsapp"
+           href="https://api.whatsapp.com/send?phone=8618124703776"
+           target="_blank"
+           rel="noopener">
+          <span class="linsy-contact-widget__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M12 2a9.5 9.5 0 0 0-8.2 14.3L3 22l5.8-1.5A9.5 9.5 0 1 0 12 2zm0 2a7.5 7.5 0 0 1 0 15c-1.3 0-2.5-.3-3.6-.9l-.4-.2-2.8.7.7-2.7-.2-.4A7.5 7.5 0 0 1 12 4zm-2.3 4.7c-.2 0-.4.1-.5.3-.2.2-.6.7-.6 1.7 0 1 .8 2 1 2.2.1.2 1.6 2.6 4 3.5 2 .7 2.4.6 2.9.6.4 0 1.3-.5 1.5-1 .2-.5.2-1 0-1.1-.2-.1-.4-.2-.8-.4l-1.2-.6c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.8-1.1-.7-.6-1.1-1.3-1.3-1.5-.1-.2 0-.3.1-.4l.4-.5c.1-.1.2-.3.3-.4.1-.2 0-.3 0-.4l-.6-1.5c-.1-.3-.3-.3-.5-.3h-.5z"
+              />
+            </svg>
+          </span>
+          <span class="screen-reader-text">WhatsApp</span>
+        </a>
+
+        <a class="linsy-contact-widget__item linsy-contact-widget__item--phone" href="tel:+8618124703776">
+          <span class="linsy-contact-widget__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M6.6 2.9c.4-.4 1-.5 1.5-.3l3 1.2c.6.2.9.9.7 1.5l-1.1 2.9c-.2.5-.1 1 .2 1.4 1 1.4 2.2 2.6 3.6 3.6.4.3.9.4 1.4.2l2.9-1.1c.6-.2 1.3.1 1.5.7l1.2 3c.2.5.1 1.1-.3 1.5l-1.6 1.6c-.5.5-1.2.7-1.9.6-6.7-1.2-12-6.5-13.2-13.2-.1-.7.1-1.4.6-1.9L6.6 2.9z"
+              />
+            </svg>
+          </span>
+          <span class="screen-reader-text">Phone</span>
+        </a>
+
+        <a class="linsy-contact-widget__item linsy-contact-widget__item--email"
+           href="mailto:david@linsyaluminum.com"
+           target="_blank"
+           rel="noopener">
+          <span class="linsy-contact-widget__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M4 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H4zm0 2h16c.4 0 .8.2 1 .5L12 13 3 7.5c.2-.3.6-.5 1-.5zm-1 2.8 8.5 5.1c.3.2.7.2 1 0L21 9.8V16c0 .6-.4 1-1 1H4c-.6 0-1-.4-1-1V9.8z"
+              />
+            </svg>
+          </span>
+          <span class="screen-reader-text">Email</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="linsy-contact-widget linsy-contact-widget__mobile" data-linsy-contact-widget="mobile">
+      <div class="linsy-contact-widget__mobile-inner">
+        <a class="linsy-contact-widget__item linsy-contact-widget__item--whatsapp"
+           href="https://api.whatsapp.com/send?phone=8618124703776"
+           target="_blank"
+           rel="noopener">
+          <span class="linsy-contact-widget__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M12 2a9.5 9.5 0 0 0-8.2 14.3L3 22l5.8-1.5A9.5 9.5 0 1 0 12 2zm0 2a7.5 7.5 0 0 1 0 15c-1.3 0-2.5-.3-3.6-.9l-.4-.2-2.8.7.7-2.7-.2-.4A7.5 7.5 0 0 1 12 4zm-2.3 4.7c-.2 0-.4.1-.5.3-.2.2-.6.7-.6 1.7 0 1 .8 2 1 2.2.1.2 1.6 2.6 4 3.5 2 .7 2.4.6 2.9.6.4 0 1.3-.5 1.5-1 .2-.5.2-1 0-1.1-.2-.1-.4-.2-.8-.4l-1.2-.6c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.8-1.1-.7-.6-1.1-1.3-1.3-1.5-.1-.2 0-.3.1-.4l.4-.5c.1-.1.2-.3.3-.4.1-.2 0-.3 0-.4l-.6-1.5c-.1-.3-.3-.3-.5-.3h-.5z"
+              />
+            </svg>
+          </span>
+          <span class="screen-reader-text">WhatsApp</span>
+        </a>
+
+        <a class="linsy-contact-widget__item linsy-contact-widget__item--phone" href="tel:+8618124703776">
+          <span class="linsy-contact-widget__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M6.6 2.9c.4-.4 1-.5 1.5-.3l3 1.2c.6.2.9.9.7 1.5l-1.1 2.9c-.2.5-.1 1 .2 1.4 1 1.4 2.2 2.6 3.6 3.6.4.3.9.4 1.4.2l2.9-1.1c.6-.2 1.3.1 1.5.7l1.2 3c.2.5.1 1.1-.3 1.5l-1.6 1.6c-.5.5-1.2.7-1.9.6-6.7-1.2-12-6.5-13.2-13.2-.1-.7.1-1.4.6-1.9L6.6 2.9z"
+              />
+            </svg>
+          </span>
+          <span class="screen-reader-text">Phone</span>
+        </a>
+
+        <a class="linsy-contact-widget__item linsy-contact-widget__item--email"
+           href="mailto:david@linsyaluminum.com"
+           target="_blank"
+           rel="noopener">
+          <span class="linsy-contact-widget__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path
+                fill="currentColor"
+                d="M4 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h16a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H4zm0 2h16c.4 0 .8.2 1 .5L12 13 3 7.5c.2-.3.6-.5 1-.5zm-1 2.8 8.5 5.1c.3.2.7.2 1 0L21 9.8V16c0 .6-.4 1-1 1H4c-.6 0-1-.4-1-1V9.8z"
+              />
+            </svg>
+          </span>
+          <span class="screen-reader-text">Email</span>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var desktop = document.querySelector(".linsy-contact-widget__desktop");
+        if (!desktop) return;
+        var toggle = desktop.querySelector(".linsy-contact-widget__toggle");
+        if (!toggle) return;
+
+        toggle.addEventListener("click", function () {
+          var isCollapsed = desktop.classList.toggle("is-collapsed");
+          toggle.setAttribute("aria-expanded", isCollapsed ? "false" : "true");
+        });
+      })();
+    </script>
+  </body>
+</html>
+
