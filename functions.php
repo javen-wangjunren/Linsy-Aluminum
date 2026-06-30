@@ -444,3 +444,34 @@ function linsy_render_contact_widget() {
 	get_template_part( 'template-parts/contact-widget' );
 }
 add_action( 'wp_footer', 'linsy_render_contact_widget', 20 );
+
+function linsy_admin_search_title_only( WP_Query $query ) {
+	if ( ! is_admin() || ! $query->is_main_query() || ! $query->is_search() ) {
+		return;
+	}
+
+	global $pagenow;
+	if ( 'edit.php' !== $pagenow ) {
+		return;
+	}
+
+	$post_type = $query->get( 'post_type' );
+	$post_types = [];
+
+	if ( empty( $post_type ) ) {
+		$post_types = [ 'post' ];
+	} elseif ( is_array( $post_type ) ) {
+		$post_types = $post_type;
+	} else {
+		$post_types = [ $post_type ];
+	}
+
+	$allowed = [ 'post', 'page' ];
+	$matched = array_intersect( $post_types, $allowed );
+	if ( empty( $matched ) ) {
+		return;
+	}
+
+	$query->set( 'search_columns', [ 'post_title' ] );
+}
+add_action( 'pre_get_posts', 'linsy_admin_search_title_only', 20 );
