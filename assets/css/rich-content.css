@@ -1,5 +1,9 @@
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -16,6 +20,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -27,6 +35,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -37,6 +49,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -46,6 +62,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -57,6 +77,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -68,18 +92,30 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
 ) h2,
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
 ) h3,
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -90,6 +126,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -104,12 +144,20 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
 ) a:hover,
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -120,12 +168,20 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
 ) strong,
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -136,18 +192,30 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
 ) h2 + p,
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
 ) h3 + p,
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -157,12 +225,20 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
 ) > *:first-child,
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -172,6 +248,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -181,12 +261,20 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
 ) ul,
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -197,6 +285,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -206,6 +298,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -218,6 +314,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -227,6 +327,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -236,12 +340,20 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
 ) table:not(.shop_table) th,
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -259,6 +371,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -271,6 +387,10 @@
 /* Fallback: many pasted WooCommerce tables use td in the first row instead of th. */
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -282,6 +402,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -291,12 +415,20 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
 ) table:not(.shop_table) tbody tr:last-child > *,
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -306,6 +438,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -315,6 +451,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -324,6 +464,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -333,6 +477,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -342,6 +490,10 @@
 
 :where(
 	.page-content,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
@@ -352,6 +504,10 @@
 @media (max-width: 767px) {
 	:where(
 		.page-content,
+		.elementor-widget-theme-post-content .elementor-widget-container,
+		.elementor-widget-post-content .elementor-widget-container,
+		.elementor-widget-theme-post-content .elementor-post__content,
+		.elementor-widget-post-content .elementor-post__content,
 		.woocommerce div.product .woocommerce-tabs .panel,
 		.woocommerce div.product .woocommerce-Tabs-panel,
 		.woocommerce-Tabs-panel--description
@@ -361,6 +517,10 @@
 
 	:where(
 		.page-content,
+		.elementor-widget-theme-post-content .elementor-widget-container,
+		.elementor-widget-post-content .elementor-widget-container,
+		.elementor-widget-theme-post-content .elementor-post__content,
+		.elementor-widget-post-content .elementor-post__content,
 		.woocommerce div.product .woocommerce-tabs .panel,
 		.woocommerce div.product .woocommerce-Tabs-panel,
 		.woocommerce-Tabs-panel--description
@@ -371,6 +531,10 @@
 
 	:where(
 		.page-content,
+		.elementor-widget-theme-post-content .elementor-widget-container,
+		.elementor-widget-post-content .elementor-widget-container,
+		.elementor-widget-theme-post-content .elementor-post__content,
+		.elementor-widget-post-content .elementor-post__content,
 		.woocommerce div.product .woocommerce-tabs .panel,
 		.woocommerce div.product .woocommerce-Tabs-panel,
 		.woocommerce-Tabs-panel--description
@@ -381,6 +545,10 @@
 
 	:where(
 		.page-content,
+		.elementor-widget-theme-post-content .elementor-widget-container,
+		.elementor-widget-post-content .elementor-widget-container,
+		.elementor-widget-theme-post-content .elementor-post__content,
+		.elementor-widget-post-content .elementor-post__content,
 		.woocommerce div.product .woocommerce-tabs .panel,
 		.woocommerce div.product .woocommerce-Tabs-panel,
 		.woocommerce-Tabs-panel--description
@@ -390,12 +558,20 @@
 
 	:where(
 		.page-content,
+		.elementor-widget-theme-post-content .elementor-widget-container,
+		.elementor-widget-post-content .elementor-widget-container,
+		.elementor-widget-theme-post-content .elementor-post__content,
+		.elementor-widget-post-content .elementor-post__content,
 		.woocommerce div.product .woocommerce-tabs .panel,
 		.woocommerce div.product .woocommerce-Tabs-panel,
 		.woocommerce-Tabs-panel--description
 	) table:not(.shop_table) th,
 	:where(
 		.page-content,
+		.elementor-widget-theme-post-content .elementor-widget-container,
+		.elementor-widget-post-content .elementor-widget-container,
+		.elementor-widget-theme-post-content .elementor-post__content,
+		.elementor-widget-post-content .elementor-post__content,
 		.woocommerce div.product .woocommerce-tabs .panel,
 		.woocommerce div.product .woocommerce-Tabs-panel,
 		.woocommerce-Tabs-panel--description
@@ -406,12 +582,20 @@
 
 	:where(
 		.page-content,
+		.elementor-widget-theme-post-content .elementor-widget-container,
+		.elementor-widget-post-content .elementor-widget-container,
+		.elementor-widget-theme-post-content .elementor-post__content,
+		.elementor-widget-post-content .elementor-post__content,
 		.woocommerce div.product .woocommerce-tabs .panel,
 		.woocommerce div.product .woocommerce-Tabs-panel,
 		.woocommerce-Tabs-panel--description
 	) img,
 	:where(
 		.page-content,
+		.elementor-widget-theme-post-content .elementor-widget-container,
+		.elementor-widget-post-content .elementor-widget-container,
+		.elementor-widget-theme-post-content .elementor-post__content,
+		.elementor-widget-post-content .elementor-post__content,
 		.woocommerce div.product .woocommerce-tabs .panel,
 		.woocommerce div.product .woocommerce-Tabs-panel,
 		.woocommerce-Tabs-panel--description
