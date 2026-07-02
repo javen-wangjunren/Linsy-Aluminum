@@ -507,20 +507,41 @@ function linsy_product_import_edit_page_ui() {
 		],
 		admin_url( 'tools.php' )
 	);
+	$form_id = 'linsy-product-import-single-' . $post_id;
 
 	echo '<div class="misc-pub-section"><a class="button" href="' . esc_url( $tools_url ) . '">' . esc_html__( 'Open Import Tool', 'hello-elementor' ) . '</a></div>';
 
 	echo '<div class="misc-pub-section">';
-	echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" enctype="multipart/form-data">';
-	echo '<input type="hidden" name="action" value="linsy_product_import_single">';
-	echo '<input type="hidden" name="product_id" value="' . esc_attr( (string) $post_id ) . '">';
-	wp_nonce_field( 'linsy_product_import_single', 'linsy_import_nonce' );
-	echo '<input type="file" name="import_file" accept=".json" required style="max-width: 100%;">';
-	echo '<p style="margin: 6px 0 0;"><button type="submit" class="button">' . esc_html__( 'Import JSON', 'hello-elementor' ) . '</button></p>';
-	echo '</form>';
+	echo '<input type="file" name="import_file" accept=".json" required form="' . esc_attr( $form_id ) . '" style="max-width: 100%;">';
+	echo '<p style="margin: 6px 0 0;"><button type="submit" class="button" form="' . esc_attr( $form_id ) . '">' . esc_html__( 'Import JSON', 'hello-elementor' ) . '</button></p>';
 	echo '</div>';
 }
 add_action( 'post_submitbox_misc_actions', 'linsy_product_import_edit_page_ui', 25 );
+
+function linsy_product_import_edit_page_form() {
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
+	if ( ! $screen || 'product' !== $screen->post_type || 'post' !== $screen->base ) {
+		return;
+	}
+
+	$post_id = isset( $_GET['post'] ) ? (int) $_GET['post'] : 0;
+	if ( ! $post_id || ! linsy_product_import_allowed_for_post( $post_id ) ) {
+		return;
+	}
+
+	$form_id = 'linsy-product-import-single-' . $post_id;
+
+	echo '<form id="' . esc_attr( $form_id ) . '" method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" enctype="multipart/form-data" style="display:none;">';
+	echo '<input type="hidden" name="action" value="linsy_product_import_single">';
+	echo '<input type="hidden" name="product_id" value="' . esc_attr( (string) $post_id ) . '">';
+	wp_nonce_field( 'linsy_product_import_single', 'linsy_import_nonce' );
+	echo '</form>';
+}
+add_action( 'admin_footer-post.php', 'linsy_product_import_edit_page_form', 20 );
 
 function linsy_product_import_handle_single() {
 	$product_id = isset( $_POST['product_id'] ) ? (int) $_POST['product_id'] : 0;
@@ -621,4 +642,3 @@ function linsy_product_import_edit_notice() {
 	echo '<div class="notice notice-success is-dismissible"><p>' . esc_html__( 'Import completed.', 'hello-elementor' ) . '</p></div>';
 }
 add_action( 'admin_notices', 'linsy_product_import_edit_notice', 20 );
-
