@@ -128,6 +128,25 @@ function linsy_product_import_read_zip_file( string $path ): array {
 	return $items;
 }
 
+function linsy_product_import_has_allowed_upload_extension( string $filename, array $allowed_extensions ): bool {
+	$filename = strtolower( trim( $filename ) );
+	if ( '' === $filename ) {
+		return false;
+	}
+
+	foreach ( $allowed_extensions as $extension ) {
+		$extension = strtolower( trim( (string) $extension ) );
+		if ( '' === $extension ) {
+			continue;
+		}
+		if ( linsy_product_import_ends_with( $filename, $extension ) ) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
 function linsy_product_import_validate( array $data ): array {
 	$errors = [];
 
@@ -403,6 +422,11 @@ function linsy_product_import_handle_bulk() {
 		wp_die( esc_html__( 'No file uploaded.', 'hello-elementor' ) );
 	}
 
+	$original_name = isset( $_FILES['import_file']['name'] ) ? (string) $_FILES['import_file']['name'] : '';
+	if ( ! linsy_product_import_has_allowed_upload_extension( $original_name, [ '.import.json', '.zip' ] ) ) {
+		wp_die( esc_html__( 'Invalid file type. Upload a .import.json file or a .zip archive.', 'hello-elementor' ) );
+	}
+
 	$dry_run = ! empty( $_POST['dry_run'] );
 	$target_product_id = isset( $_POST['target_product_id'] ) ? (int) $_POST['target_product_id'] : 0;
 
@@ -410,14 +434,16 @@ function linsy_product_import_handle_bulk() {
 		$_FILES['import_file'],
 		[
 			'test_form' => false,
+			'test_type' => false,
 		]
 	);
 	if ( empty( $uploaded['file'] ) ) {
-		wp_die( esc_html__( 'Upload failed.', 'hello-elementor' ) );
+		$message = isset( $uploaded['error'] ) ? (string) $uploaded['error'] : esc_html__( 'Upload failed.', 'hello-elementor' );
+		wp_die( esc_html( $message ) );
 	}
 
 	$path = (string) $uploaded['file'];
-	$original_name = isset( $_FILES['import_file']['name'] ) ? (string) $_FILES['import_file']['name'] : basename( $path );
+	$original_name = '' !== $original_name ? $original_name : basename( $path );
 
 	$items = [];
 	if ( linsy_product_import_ends_with( strtolower( $original_name ), '.zip' ) ) {
@@ -558,18 +584,25 @@ function linsy_product_import_handle_single() {
 		wp_die( esc_html__( 'No file uploaded.', 'hello-elementor' ) );
 	}
 
+	$original_name = isset( $_FILES['import_file']['name'] ) ? (string) $_FILES['import_file']['name'] : '';
+	if ( ! linsy_product_import_has_allowed_upload_extension( $original_name, [ '.import.json' ] ) ) {
+		wp_die( esc_html__( 'Invalid file type. Upload a .import.json file.', 'hello-elementor' ) );
+	}
+
 	$uploaded = wp_handle_upload(
 		$_FILES['import_file'],
 		[
 			'test_form' => false,
+			'test_type' => false,
 		]
 	);
 	if ( empty( $uploaded['file'] ) ) {
-		wp_die( esc_html__( 'Upload failed.', 'hello-elementor' ) );
+		$message = isset( $uploaded['error'] ) ? (string) $uploaded['error'] : esc_html__( 'Upload failed.', 'hello-elementor' );
+		wp_die( esc_html( $message ) );
 	}
 
 	$path = (string) $uploaded['file'];
-	$original_name = isset( $_FILES['import_file']['name'] ) ? (string) $_FILES['import_file']['name'] : basename( $path );
+	$original_name = '' !== $original_name ? $original_name : basename( $path );
 
 	$data = linsy_product_import_read_json_file( $path );
 	@unlink( $path );
