@@ -1,0 +1,68 @@
+.woocommerce div.product div.images .woocommerce-product-gallery__wrapper {
+	display: block;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image {
+	float: none !important;
+	margin-right: 0 !important;
+	width: 100% !important;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image:not(.is-active) {
+	display: none !important;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image.is-active {
+	display: block !important;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__image a {
+	display: block;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger,
+.woocommerce div.product div.images .zoomImg {
+	display: none !important;
+}
+
+.linsy-product-gallery-thumbs {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 12px;
+	list-style: none;
+	margin: 16px 0 0;
+	padding: 0;
+}
+
+.linsy-product-gallery-thumbs li {
+	margin: 0;
+}
+
+.linsy-product-gallery-thumbs button {
+	appearance: none;
+	background: transparent;
+	border: 1px solid #d5d9df;
+	border-radius: 6px;
+	cursor: pointer;
+	display: block;
+	padding: 0;
+	width: 100%;
+}
+
+.linsy-product-gallery-thumbs button.is-active {
+	border-color: #0b73b6;
+	box-shadow: 0 0 0 1px #0b73b6 inset;
+}
+
+.linsy-product-gallery-thumbs img {
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+@media (max-width: 767px) {
+	.linsy-product-gallery-thumbs {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 10px;
+	}
+}
