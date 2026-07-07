@@ -227,6 +227,8 @@ require get_template_directory() . '/includes/elementor-functions.php';
 
 require get_template_directory() . '/includes/woocommerce-conditional-assets.php';
 
+require get_template_directory() . '/includes/gutenberg-conditional-assets.php';
+
 if ( ! function_exists( 'hello_elementor_customizer' ) ) {
 	// Customizer controls
 	function hello_elementor_customizer() {
