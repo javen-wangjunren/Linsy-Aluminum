@@ -32,7 +32,6 @@ add_action( 'wp_enqueue_scripts', function() {
 	if ( hello_is_wc_page_request() ) {
 		if ( hello_is_wc_product_page_request() ) {
 			$product_style_handles = [
-				'woocommerce-general',
 				'woocommerce-layout',
 				'woocommerce-smallscreen',
 			];
