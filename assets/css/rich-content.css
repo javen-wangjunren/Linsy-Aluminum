@@ -8,7 +8,9 @@
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
 ) table:not(.shop_table) {
-	width: 100%;
+	display: block;
+	width: max-content;
+	min-width: 100%;
 	max-width: 100%;
 	margin: 24px 0 32px;
 	border-collapse: separate;
@@ -16,6 +18,9 @@
 	border: 1px solid #9d9d9d;
 	border-radius: 14px;
 	background: #ffffff;
+	box-sizing: border-box;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 :where(
@@ -43,8 +48,11 @@
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
 ) .table-responsive table:not(.shop_table) {
+	display: table;
 	margin: 0;
 	min-width: 640px;
+	max-width: none;
+	overflow: visible;
 }
 
 :where(
