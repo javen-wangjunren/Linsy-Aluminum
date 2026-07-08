@@ -18,6 +18,7 @@
 	function enhanceTables( root ) {
 		var scope = root || document;
 		var tables = scope.querySelectorAll(
+			'.elementor-widget-woocommerce-product-content table,' +
 			'.woocommerce div.product .woocommerce-tabs .panel table,' +
 			'.woocommerce div.product .woocommerce-Tabs-panel table,' +
 			'.woocommerce-Tabs-panel--description table'
