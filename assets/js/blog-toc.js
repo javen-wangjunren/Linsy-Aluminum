@@ -76,7 +76,7 @@
 		wrapper.setAttribute( 'aria-label', 'Table of contents' );
 
 		title.className = 'linsy-blog-toc__title';
-		title.textContent = 'On this page';
+		title.textContent = 'Blog Outline';
 
 		list.className = 'linsy-blog-toc__list';
 
