@@ -416,6 +416,51 @@
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
+) table:not(.shop_table) .is-compact-column {
+	white-space: nowrap;
+}
+
+:where(
+	.page-content,
+	.elementor-widget-woocommerce-product-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
+	.woocommerce div.product .woocommerce-tabs .panel,
+	.woocommerce div.product .woocommerce-Tabs-panel,
+	.woocommerce-Tabs-panel--description
+) table:not(.shop_table) .is-description-column,
+:where(
+	.page-content,
+	.elementor-widget-woocommerce-product-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
+	.woocommerce div.product .woocommerce-tabs .panel,
+	.woocommerce div.product .woocommerce-Tabs-panel,
+	.woocommerce-Tabs-panel--description
+) table:not(.shop_table) .is-spanning-cell {
+	min-width: 14rem;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+	text-align: left;
+	vertical-align: top;
+	line-height: 1.7;
+}
+
+:where(
+	.page-content,
+	.elementor-widget-woocommerce-product-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
+	.woocommerce div.product .woocommerce-tabs .panel,
+	.woocommerce div.product .woocommerce-Tabs-panel,
+	.woocommerce-Tabs-panel--description
 ) table:not(.shop_table) th {
 	background: #f97c30;
 	color: #111111;
