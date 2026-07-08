@@ -25,10 +25,6 @@
 	margin-top: 10px;
 }
 
-.linsy-blog-toc__item.is-level-h3 {
-	padding-left: 16px;
-}
-
 .linsy-blog-toc__link {
 	display: inline-block;
 	color: #444444;
@@ -52,26 +48,6 @@
 
 @media (max-width: 767px) {
 	.linsy-blog-toc {
-		margin: 0 0 24px;
-		padding: 16px 16px 18px;
-		border-radius: 14px;
-	}
-
-	.linsy-blog-toc__title {
-		margin-bottom: 12px;
-		font-size: 0.98rem;
-	}
-
-	.linsy-blog-toc__item + .linsy-blog-toc__item {
-		margin-top: 8px;
-	}
-
-	.linsy-blog-toc__item.is-level-h3 {
-		padding-left: 12px;
-	}
-
-	.linsy-blog-toc__link {
-		font-size: 0.92rem;
-		line-height: 1.5;
+		display: none;
 	}
 }

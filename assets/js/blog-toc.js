@@ -6,7 +6,7 @@
 		'.elementor-widget-theme-post-content .elementor-post__content',
 		'.elementor-widget-post-content .elementor-post__content'
 	].join( ', ' );
-	var HEADING_SELECTOR = 'h2, h3';
+	var HEADING_SELECTOR = 'h2';
 	var ACTIVE_CLASS = 'is-active';
 
 	function slugify( text ) {
@@ -52,12 +52,11 @@
 		} );
 	}
 
-	function buildItem( heading, hasSeenH2 ) {
+	function buildItem( heading ) {
 		var item = document.createElement( 'li' );
 		var link = document.createElement( 'a' );
-		var isNestedH3 = 'H3' === heading.tagName && hasSeenH2;
 
-		item.className = 'linsy-blog-toc__item ' + ( isNestedH3 ? 'is-level-h3' : 'is-level-h2' );
+		item.className = 'linsy-blog-toc__item is-level-h2';
 		link.className = 'linsy-blog-toc__link';
 		link.href = '#' + heading.id;
 		link.textContent = heading.innerText.trim();
@@ -72,7 +71,6 @@
 		var wrapper = document.createElement( 'nav' );
 		var title = document.createElement( 'div' );
 		var list = document.createElement( 'ol' );
-		var hasSeenH2 = false;
 
 		wrapper.className = 'linsy-blog-toc';
 		wrapper.setAttribute( 'aria-label', 'Table of contents' );
@@ -83,11 +81,7 @@
 		list.className = 'linsy-blog-toc__list';
 
 		headings.forEach( function( heading ) {
-			list.appendChild( buildItem( heading, hasSeenH2 ) );
-
-			if ( 'H2' === heading.tagName ) {
-				hasSeenH2 = true;
-			}
+			list.appendChild( buildItem( heading ) );
 		} );
 
 		wrapper.appendChild( title );
