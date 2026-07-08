@@ -143,6 +143,36 @@
 }
 
 :where(
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content
+) h2,
+:where(
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content
+) h3 {
+	scroll-margin-top: 120px;
+}
+
+:where(
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content
+) .linsy-blog-toc + h2,
+:where(
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content
+) .linsy-blog-toc + h3 {
+	margin-top: 0;
+}
+
+:where(
 	.page-content,
 	.elementor-widget-woocommerce-product-content .elementor-widget-container,
 	.elementor-widget-theme-post-content .elementor-widget-container,
@@ -636,6 +666,21 @@
 	) h4 {
 		margin: 20px 0 10px;
 		font-size: 1.1rem;
+	}
+
+	:where(
+		.elementor-widget-theme-post-content .elementor-widget-container,
+		.elementor-widget-post-content .elementor-widget-container,
+		.elementor-widget-theme-post-content .elementor-post__content,
+		.elementor-widget-post-content .elementor-post__content
+	) h2,
+	:where(
+		.elementor-widget-theme-post-content .elementor-widget-container,
+		.elementor-widget-post-content .elementor-widget-container,
+		.elementor-widget-theme-post-content .elementor-post__content,
+		.elementor-widget-post-content .elementor-post__content
+	) h3 {
+		scroll-margin-top: 96px;
 	}
 
 	:where(

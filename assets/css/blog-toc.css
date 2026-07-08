@@ -1,0 +1,77 @@
+.linsy-blog-toc {
+	margin: 0 0 28px;
+	padding: 20px 22px;
+	border: 1px solid #d7d7d7;
+	border-radius: 16px;
+	background: #fbfbfb;
+	box-shadow: 0 1px 2px rgba( 17, 17, 17, 0.03 );
+}
+
+.linsy-blog-toc__title {
+	margin: 0 0 14px;
+	color: #111111;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+.linsy-blog-toc__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.linsy-blog-toc__item + .linsy-blog-toc__item {
+	margin-top: 10px;
+}
+
+.linsy-blog-toc__item.is-level-h3 {
+	padding-left: 16px;
+}
+
+.linsy-blog-toc__link {
+	display: inline-block;
+	color: #444444;
+	font-size: 0.95rem;
+	font-weight: 500;
+	line-height: 1.55;
+	text-decoration: none;
+	overflow-wrap: anywhere;
+	transition: color 0.2s ease;
+}
+
+.linsy-blog-toc__link:hover,
+.linsy-blog-toc__link:focus {
+	color: #f97c30;
+}
+
+.linsy-blog-toc__link.is-active {
+	color: #f97c30;
+	font-weight: 700;
+}
+
+@media (max-width: 767px) {
+	.linsy-blog-toc {
+		margin: 0 0 24px;
+		padding: 16px 16px 18px;
+		border-radius: 14px;
+	}
+
+	.linsy-blog-toc__title {
+		margin-bottom: 12px;
+		font-size: 0.98rem;
+	}
+
+	.linsy-blog-toc__item + .linsy-blog-toc__item {
+		margin-top: 8px;
+	}
+
+	.linsy-blog-toc__item.is-level-h3 {
+		padding-left: 12px;
+	}
+
+	.linsy-blog-toc__link {
+		font-size: 0.92rem;
+		line-height: 1.5;
+	}
+}
