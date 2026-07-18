@@ -452,5 +452,7 @@ add_action( 'wp_footer', 'linsy_render_contact_widget', 20 );
 require HELLO_THEME_PATH . '/includes/admin-search-export.php';
 require HELLO_THEME_PATH . '/includes/content-rich-styles.php';
 require HELLO_THEME_PATH . '/includes/product-admin-filters.php';
+require HELLO_THEME_PATH . '/includes/blog-export.php';
+require HELLO_THEME_PATH . '/includes/blog-import.php';
 require HELLO_THEME_PATH . '/includes/product-export.php';
 require HELLO_THEME_PATH . '/includes/product-import.php';
