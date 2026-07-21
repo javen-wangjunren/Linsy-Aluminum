@@ -296,6 +296,15 @@ function linsy_blog_import_store_report( array $report ): string {
 	return $key;
 }
 
+function linsy_blog_import_sanitize_report_key( string $key ): string {
+	$key = trim( $key );
+	if ( '' === $key ) {
+		return '';
+	}
+
+	return preg_replace( '/[^A-Za-z0-9_-]/', '', $key );
+}
+
 function linsy_blog_import_get_report( string $key ): array {
 	$report = get_transient( $key );
 	if ( ! is_array( $report ) ) {
@@ -358,7 +367,7 @@ function linsy_blog_import_tools_page() {
 	}
 
 	$target_post_id = isset( $_GET['post_id'] ) ? (int) $_GET['post_id'] : 0;
-	$report_key     = isset( $_GET['report'] ) ? sanitize_key( (string) $_GET['report'] ) : '';
+	$report_key     = isset( $_GET['report'] ) ? linsy_blog_import_sanitize_report_key( (string) $_GET['report'] ) : '';
 	$report         = $report_key ? linsy_blog_import_get_report( $report_key ) : [];
 
 	echo '<div class="wrap">';
@@ -458,6 +467,13 @@ function linsy_blog_import_handle_bulk() {
 		'success' => [],
 		'failed'  => [],
 	];
+
+	if ( empty( $items ) ) {
+		$report['failed'][] = [
+			'file'  => $original_name,
+			'error' => 'no_valid_import_items',
+		];
+	}
 
 	foreach ( $items as $filename => $data ) {
 		$post_id = linsy_blog_import_locate_post_id( $data );
@@ -605,6 +621,10 @@ function linsy_blog_import_handle_single() {
 	$data = linsy_blog_import_read_json_file( $path );
 	@unlink( $path );
 
+	if ( empty( $data ) ) {
+		wp_die( esc_html__( 'Invalid JSON file or unreadable content.', 'hello-elementor' ) );
+	}
+
 	$reported_post_id = linsy_blog_import_locate_post_id( $data );
 	if ( ! $reported_post_id || $reported_post_id !== $post_id ) {
 		wp_die( esc_html__( 'Post ID mismatch.', 'hello-elementor' ) );
@@ -654,7 +674,7 @@ function linsy_blog_import_edit_notice() {
 		return;
 	}
 
-	$report_key = isset( $_GET['report'] ) ? sanitize_key( (string) $_GET['report'] ) : '';
+	$report_key = isset( $_GET['report'] ) ? linsy_blog_import_sanitize_report_key( (string) $_GET['report'] ) : '';
 	if ( '' === $report_key ) {
 		return;
 	}
