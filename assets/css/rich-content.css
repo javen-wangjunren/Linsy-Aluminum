@@ -69,6 +69,41 @@
 	.woocommerce div.product .woocommerce-tabs .panel,
 	.woocommerce div.product .woocommerce-Tabs-panel,
 	.woocommerce-Tabs-panel--description
+) figure.wp-block-table {
+	max-width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+:where(
+	.page-content,
+	.elementor-widget-woocommerce-product-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
+	.woocommerce div.product .woocommerce-tabs .panel,
+	.woocommerce div.product .woocommerce-Tabs-panel,
+	.woocommerce-Tabs-panel--description
+) figure.wp-block-table > table.has-fixed-layout:not(.shop_table) {
+	display: table;
+	width: max-content;
+	min-width: 0;
+	max-width: none;
+	table-layout: auto;
+	overflow: visible;
+}
+
+:where(
+	.page-content,
+	.elementor-widget-woocommerce-product-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-widget-container,
+	.elementor-widget-post-content .elementor-widget-container,
+	.elementor-widget-theme-post-content .elementor-post__content,
+	.elementor-widget-post-content .elementor-post__content,
+	.woocommerce div.product .woocommerce-tabs .panel,
+	.woocommerce div.product .woocommerce-Tabs-panel,
+	.woocommerce-Tabs-panel--description
 ) h2 {
 	margin: 48px 0 18px;
 }
