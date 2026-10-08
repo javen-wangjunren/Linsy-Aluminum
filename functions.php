@@ -456,3 +456,5 @@ require HELLO_THEME_PATH . '/includes/blog-export.php';
 require HELLO_THEME_PATH . '/includes/blog-import.php';
 require HELLO_THEME_PATH . '/includes/product-export.php';
 require HELLO_THEME_PATH . '/includes/product-import.php';
+require HELLO_THEME_PATH . '/includes/linsy-ai-connector.php';
+require HELLO_THEME_PATH . '/includes/post-admin-filters.php';
